@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type=image/png href="favicon.png">
+    <link rel="stylesheet" href="index.css">
+    <title>Latihan Javascript</title>
+</head>
+
+<body>
+    <h1>
+        <center>Ini Adalah Indexnya
+    </h1>
+
+    <!-- <p id="judul1">Hallo Judul 1</p>
+
+        <p id="judul2">Hallo Judul 2</p>
+
+    <div>
+        <h1>Daftar Menu</h1>
+        <ol>
+            <li>Nasi Goreng</li>
+            <li>Nasi Ayam Goreng</li>
+            <li>Nasi Uduk</li>
+            <li>Nasi Telur Balado</li>
+            <li>Nasi Uduk</li>
+            <li>Nasi Telur Balado</li>
+        </ol>
+    </div> -->
+
+    <button id="btnred">Klik Tombol Ini Warna Merah</button>
+    <br>
+    <button id="btngreen">Klik Tombol Ini Warna Hijau</button>
+    <!-- <div>
+        <form action="" id="formku">
+            <label for="name">Name</label>
+            <input type="text" name="fullname" id="fullname">
+            <br>
+            <br>
+            <label for="address">Alamat</label>
+            <input type="textarea" name="address" id="address">
+            <br>
+            <br>
+            <label for="gender">Jenis Kelamin</label>
+            <input type="radio" name="gender" id="gender" value="laki-laki">Laki-Laki
+            <input type="radio" name="gender" id="gender" value="perempuan">Perempuan
+            <br>
+            <br>
+            <label for="religi">Agama</label>
+            <select name="religi" id="religi">
+                <option value="Islam">Islam</option>
+                <option value="Kristen">Kristen</option>
+                <option value="Hindu">Hindu</option>
+                <option value="Budha">Budha</option>
+                <option value="Katolik">Katolik</option>
+                <option value="Khonghuchu">Khonghuchu</option>
+            </select>
+            <br>
+            <input type="submit" class="btn-submit" id="submit" value="SUBMIT">
+            <input type="reset" class="btn-reset" id="reset" value="RESET">
+            <br>
+
+            <div class="result" id="result">
+
+            </div>
+        </form>
+    </div> -->
+
+    <!-- <div>
+        <form action="" method="GET">
+            <p>
+                <label for="choice">Kategori</label>
+                <select name="choice" id="choice">
+                    <option value="">Pilih Kategori</option>
+                    <option value="Makanan">Makanan</option>
+                    <option value="Minuman">Minuman</option>
+                    <option value="Snack Ringan">Snack Ringan</option>
+                </select>
+
+                <label for="subchoice">Pilih Menu</label>
+                <select name="subchoice" id="subchoice">
+                    <option value="">Pilih Menu</option>
+                </select>
+            </p>
+        </form>
+
+        <br><br>
+
+        <h3 id="yourChoice"></h3>
+    </div> -->
+    
+    <div>
+        <form action="" id="formvalidation">
+            <p id="pesan"></p>
+            <p>Username : <input type="text" name="username" id="username"></p>
+
+            <p><input type=submit class="btn-submit" name="submitform" id="submitform" value="SUBMIT"></p>
+        </form>
+
+    </div>
+    
+    <script>
+        var username, formvalidation, submitform, pesan;
+        formvalidation = document.getElementById('formvalidation');
+        username = document.getElementById('username');
+        submitform = document.getElementById('submitform');
+        pesan = document.getElementById('pesan');
+
+        function prosesForm(e) {
+            console.log("Username : " + username.value)
+            if (username.value.trim() === "") {
+                pesan.innerHTML = "Username Wajib Diisi!";
+                pesan.className = "error";
+                e.preventDefault();
+            } else if ( /\W/.test(username.value.trim())) {
+                pesan.innerHTML = "Pastikan Mengisinya Hanya Dengan Alfa Numerik";
+                pesan.className = "warning";
+                e.preventDefault();
+            }
+        }
+
+        formvalidation.addEventListener("submit", prosesForm);
+    </script>
+</body>
+
+
+<!-- <script src="index.js"></script> -->
+
+</html>
