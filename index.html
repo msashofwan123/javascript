@@ -96,6 +96,8 @@
         <form action="" id="formvalidation">
             <p id="pesan"></p>
             <p>Username : <input type="text" name="username" id="username"></p>
+            <p id="ePesan"></p>
+            <p>Email : <input type="email" name="email" id="email"></p>
 
             <p><input type=submit class="btn-submit" name="submitform" id="submitform" value="SUBMIT"></p>
         </form>
@@ -103,11 +105,13 @@
     </div>
     
     <script>
-        var username, formvalidation, submitform, pesan;
+        var username, email, formvalidation, submitform, pesan, epesan;
         formvalidation = document.getElementById('formvalidation');
         username = document.getElementById('username');
+        email = document.getElementById('email');
         submitform = document.getElementById('submitform');
         pesan = document.getElementById('pesan');
+        epesan = document.getElementById('ePesan');
 
         function prosesForm(e) {
             console.log("Username : " + username.value)
@@ -118,6 +122,17 @@
             } else if ( /\W/.test(username.value.trim())) {
                 pesan.innerHTML = "Pastikan Mengisinya Hanya Dengan Alfa Numerik";
                 pesan.className = "warning";
+                e.preventDefault();
+            }
+
+            console.log("Email : " + email.value)
+            if (email.value.trim() === "") {
+                epesan.innerHTML = "Email Wajib Diisi!";
+                epesan.className = "error";
+                e.preventDefault();
+            } else if (email.value.trim() = "") {
+                epesan.innerHTML = "Pastikan Anda Mengisi Email Dengan benar";
+                epesan.className = "warning";
                 e.preventDefault();
             }
         }
